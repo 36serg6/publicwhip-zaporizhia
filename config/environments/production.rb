@@ -96,8 +96,10 @@ Rails.application.configure do
       port: 2525,
       domain: 'oporaua.org',
       authentication: :plain,
-      user_name: Settings.email,
-      password: Settings.email_password,
+#      user_name: Settings.email,
+      user_name: 'test_user_name_99',
+#      password: Settings.email_password,
+      password: 'test_user_password_99',
       enable_starttls_auto: true
   }
 end

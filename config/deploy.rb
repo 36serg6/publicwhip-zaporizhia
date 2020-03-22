@@ -10,17 +10,17 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'ruby.oporaua.org'
-set :deploy_to, "/home/publicwhip-kyiv/"
-set :repository, "git@github.com:OPORA/publicwhip-kyiv.git"
+set :domain, '192.168.0.157'
+set :deploy_to, "/var/www/r4yzp/"
+set :repository, "git@github.com:36serg6/publicwhip-zaporizhia.git"
 set :branch, 'policy'
 
 # For system-wide RVM install.
 set :rvm_use_path,  '/usr/local/rvm/scripts/rvm'
 set :keep_releases, 2
 ## Optional settings:
-set :user, 'root'          # Username in the server to SSH to.
-set :port, '1122'           # SSH port number.
+set :user, 'sergey'          # Username in the server to SSH to.
+set :port, '22'           # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
 # shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
