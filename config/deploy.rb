@@ -19,7 +19,7 @@ set :branch, 'policy'
 set :rvm_use_path,  '/usr/local/rvm/scripts/rvm'
 set :keep_releases, 2
 ## Optional settings:
-set :user, 'sergey'          # Username in the server to SSH to.
+set :user, 'root'          # Username in the server to SSH to.
 set :port, '22'           # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
