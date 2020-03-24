@@ -1,3 +1,5 @@
+<% division_first = Division.first %>
+<% policy_first = Policy.first %>
 
 # API - отримай дані в JSON
 
@@ -108,7 +110,11 @@
  
 ## Деталі голосувань
 ##### Для отримання інформації про конкретне голосування використовуйте наступне посилання :
-<%= link_to  api_division_url(:format =>"json", division: Division.first.id), api_division_url(:format =>"json", division: Division.first.id) %>
+<% if division_first %>
+<%= link_to  api_division_url(:format =>"json", division: division_first.id), api_division_url(:format =>"json", division: division_first.id) %>
+<% else %>
+...
+<% end %>
 *для отримання інформації про визначене голосування використовуйте  унікальний ідентифікатор голосування `id`, та вставте його після знаку `“=”` в посиланні
 в цьому наборі міститься наступна інформація :
 
@@ -187,7 +193,11 @@
 
 Щоб отримати інформацію про рівень підтримки політики конкретним депутатом використовуйте посилання:
 
+<% if policy_first %>
+<%= link_to  api_policy_url(:format =>"json", policy_id: policy_first.id), api_policy_url(:format =>"json",  policy_id: policy_first.id) %>
+<% else %>
 ...
+<% end %>
 
 Цей набір містить статистичну інформацію про кількість підтриманих, та кількість непідтриманих депутатом голосувань з політики, а також, кількості питань, під час розгляду яких депутат був відсутній і має наступну структуру:
 
@@ -292,10 +302,14 @@
  
 
 ### Результати голосування депутатів за визначене питання 
-<%= link_to  api_division_url(:format =>"csv", division: Division.first.id), api_division_url(:format =>"csv", division: Division.first.id) %>
-Перейшовши за цим запитом можна отримати інформацію про те, як голосував кожен депутат в конкретному голосуванні з унікальним ідентифікатором `division_id=<%=Division.first.id%>`.
+<% if division_first %>
+<%= link_to  api_division_url(:format =>"csv", division: division_first.id), api_division_url(:format =>"csv", division: division_first.id) %>
+Перейшовши за цим запитом можна отримати інформацію про те, як голосував кожен депутат в конкретному голосуванні з унікальним ідентифікатором `division_id=<%=division_first.id%>`.
  
-*Примітка: щоб подивитись деталі іншого голосування, замість `“<%=Division.first.id%>”` потрібно підставити `division_id` обраного голосування.
+*Примітка: щоб подивитись деталі іншого голосування, замість `“<%=division_first.id%>”` потрібно підставити `division_id` обраного голосування.
+<% else %>
+...
+<% end %>
 
 | Параметр     | Опис |
 |------------|------------
@@ -308,10 +322,14 @@
  
 
 ### Результати голосування за визначене питання в розрізі фракцій
-<%= link_to  api_division_url(:format =>"csv", division: Division.first.id, filter: "whips"), api_division_url(:format =>"csv", division: Division.first.id, filter: "whips") %> 
-Перейшовши за цим посиланням можна отримати результати голосування з унікальним ідентифікатором `division_id=<%=Division.first.id%>` в розрізі депутатських фракцій.
+<% if division_first %>
+<%= link_to  api_division_url(:format =>"csv", division: division_first.id, filter: "whips"), api_division_url(:format =>"csv", division: division_first.id, filter: "whips") %> 
+Перейшовши за цим посиланням можна отримати результати голосування з унікальним ідентифікатором `division_id=<%=division_first.id%>` в розрізі депутатських фракцій.
  
-*Примітка: щоб подивитись деталі іншого голосування, замість `“<%=Division.first.id%>”` використовуйте `division_id` обраного голосування.
+*Примітка: щоб подивитись деталі іншого голосування, замість `“<%=division_first.id%>”` використовуйте `division_id` обраного голосування.
+<% else %>
+...
+<% end %>
 
 | Параметр     | Опис |
 |------------|------------
@@ -330,12 +348,16 @@
  
  
 ### Загальна статистика голосування за визначене питання
+
+<% if division_first %>
+<%= link_to  api_division_url(:format =>"csv", division: division_first.id, filter: "info"), api_division_url(:format =>"csv", division: division_first.id, filter: "info") %> 
  
-<%= link_to  api_division_url(:format =>"csv", division: Division.first.id, filter: "info"), api_division_url(:format =>"csv", division: Division.first.id, filter: "info") %> 
+Перейшовши за цим посиланням можна отримати результати голосування з унікальним ідентифікатором `division_id=<%=division_first.id%>` в розрізі депутатських фракцій.
  
-Перейшовши за цим посиланням можна отримати результати голосування з унікальним ідентифікатором `division_id=<%=Division.first.id%>` в розрізі депутатських фракцій.
- 
-*Примітка: щоб подивитись деталі іншого голосування, замість `“<%=Division.first.id%>”` використовуйте `division_id` обраного голосування.
+*Примітка: щоб подивитись деталі іншого голосування, замість `“<%=division_first.id%>”` використовуйте `division_id` обраного голосування.
+<% else %>
+...
+<% end %>
  
 | Параметр     | Опис |
 |------------|------------
