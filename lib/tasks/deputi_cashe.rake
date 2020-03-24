@@ -1,6 +1,6 @@
 namespace :deputi_cashe do
   desc 'Update all the caches'
-  task all: do
+  task :all do
     start_time = Time.now
     Rake::Task["deputi_cashe:mp"].invoke
     Rake::Task["deputi_cashe:mp_month"].invoke

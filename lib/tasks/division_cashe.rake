@@ -1,6 +1,6 @@
 namespace :division_cashe do
   desc 'Update all the caches'
-  task all: do
+  task :all do
     start_time = Time.now
     Rake::Task["division_cashe:whip"].invoke
     Rake::Task["division_cashe:info"].invoke
