@@ -1,6 +1,14 @@
 namespace :deputi_cashe do
   desc 'Update all the caches'
-  task all: [:mp, :mp_month, :friends, :friends_month]
+  task all: do
+    start_time = Time.now
+    Rake::Task["deputi_cashe:mp"].invoke
+    Rake::Task["deputi_cashe:mp_month"].invoke
+    Rake::Task["deputi_cashe:friends"].invoke
+    Rake::Task["deputi_cashe:friends_month"].invoke
+    p "---> deputi_cashe:all total time: " + Time.at(Time.now - start_time).utc.strftime("%H:%M:%S")
+  end
+
   desc "Update mp cashe"
   task mp_month: :environment do
 

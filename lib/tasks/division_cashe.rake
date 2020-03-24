@@ -1,6 +1,12 @@
 namespace :division_cashe do
   desc 'Update all the caches'
-  task all: [:whip, :info, :party_voted]
+  task all: do
+    start_time = Time.now
+    Rake::Task["division_cashe:whip"].invoke
+    Rake::Task["division_cashe:info"].invoke
+    Rake::Task["division_cashe:party_voted"].invoke
+    p "---> division_cashe:all total time: " + Time.at(Time.now - start_time).utc.strftime("%H:%M:%S")
+  end
 
   desc "Update party statistick"
 
