@@ -19,7 +19,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 #  config.mailer_sender = 'postmaster@oporaua.org'
-config.mailer_sender = 'test_mailer_sender_99'
+config.mailer_sender = 'no-reply@serhii.shad.com.ua'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
