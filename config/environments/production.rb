@@ -92,14 +92,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: 'mail.oporaua.org',
-      port: 2525,
-      domain: 'oporaua.org',
-      authentication: :plain,
-#      user_name: Settings.email,
-      user_name: 'test_user_name_99',
-#      password: Settings.email_password,
-      password: 'test_user_password_99',
+      address: 'localhost',
+      port: 25,
+      domain: 'serhii.shad.com.ua',
+      #authentication: :plain,
+      #user_name: Settings.email,
+      #password: Settings.email_password,
       enable_starttls_auto: true
   }
 end
