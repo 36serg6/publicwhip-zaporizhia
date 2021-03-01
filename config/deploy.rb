@@ -13,7 +13,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 set :domain, '134.209.237.64'
 set :deploy_to, "/var/www/r4yzp/"
 set :repository, "git@github.com:36serg6/publicwhip-zaporizhia.git"
-set :branch, 'policy-production'
+set :branch, 'policy-production-2015'
 
 # For system-wide RVM install.
 set :rvm_use_path,  '/usr/local/rvm/scripts/rvm'
