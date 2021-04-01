@@ -45,6 +45,13 @@
     font-size: 9px;
     line-height: 11px;
   }
+  footer div [class*="row"] p.footer-contacts {
+    max-width: 800px;
+    margin: 10px auto 30px;
+  }
+  footer div [class*="row"] p.footer-contacts a{
+    font-size: inherit;
+  }
   footer div [class*="row"] > div{
     margin-bottom: 25px;
   }
